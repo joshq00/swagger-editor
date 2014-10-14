@@ -35,7 +35,7 @@ PhonicsApp.service('Editor', function Editor() {
 
     // Editor is ready, fire the on-ready function and flush the queue
     onReadyFns.forEach(function (fn) {
-      fn(that, editor);
+      fn(that);
     });
     onReadyFns = [];
 
@@ -129,6 +129,13 @@ PhonicsApp.service('Editor', function Editor() {
     return editor.getCursorPosition().row;
   }
 
+  function getEditor() {
+    if (editor) {
+      return editor;
+    }
+    throw new Error('Editor does not exist.');
+  }
+
   this.getValue = getValue;
   this.setValue = setValue;
   this.aceLoaded = aceLoaded;
@@ -143,4 +150,5 @@ PhonicsApp.service('Editor', function Editor() {
   this.removeFold = removeFold;
   this.gotoLine = gotoLine;
   this.lineInFocus = lineInFocus;
+  this.getEditor = getEditor;
 });
