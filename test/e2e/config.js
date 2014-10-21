@@ -4,7 +4,7 @@ var config = {
   baseUrl: 'http://localhost:8282/',
 
   capabilities: {
-    'browserName': process.env.TRAVIS ? 'chromium-browser' : 'chrome',
+    'browserName': process.env.TRAVIS ? 'Chrome' : 'chrome',
     chromeOptions: {
       args: ['--test-type', '--no-sandbox']
     }
