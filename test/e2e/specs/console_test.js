@@ -12,7 +12,7 @@
     expect(browser.getTitle()).toContain('Swagger Editor');
   });
 
-  it('Should not have any console errors or warnings', function () {
+  it('Should not have any console errors', function () {
     browser.manage().logs().get('browser').then(function(browserLog) {
       var errorLogs = browserLog.filter(function (log) {
         return log.level.value > 900;
